@@ -426,7 +426,7 @@ var gameEngine = {
   },
   updateLevel: function(levelNum) { // Update the level number in the game space and add to engine
     gameEngine.levelNum = levelNum;
-    gmStatsLvlNumb.innerHTML = "×©×œ×‘ " + gameEngine.levelNum;
+    gmStatsLvlNumb.innerHTML = "שלב " + gameEngine.levelNum;
   },
   updateTapCount: function(tapNum, tapsGoal) { // Update tabs count in the game space & add to engine
     gameEngine.tapNum = tapNum;
@@ -474,7 +474,7 @@ var gameEngine = {
     timeEngine.reset();
     timeEngine.start(time);
 
-    console.log('Game Started! ðŸ');
+    console.log('Game Started! 🏁');
   },
   startLevel: function() { // start level using the current level value in the game engine
     gameEngine.start(
@@ -532,8 +532,8 @@ var gameEngine = {
       window.dispatchEvent(new Event('gameEnded'));
   },
   deadlyTap: function() { // tapping a red circle
-    console.log('You lost! ðŸœ');
-      lvlLostTtl.innerHTML = "×”×ž×©×—×§ × ×’×ž×¨ :(";
+    console.log('You lost! 🐜');
+      lvlLostTtl.innerHTML = "המשחק נגמר :(";
     if (lvlLostIcon.classList.contains('times-up-icon')) {
       lvlLostIcon.classList.remove('times-up-icon');
       lvlLostIcon.classList.add('you-lost-icon');
@@ -541,8 +541,8 @@ var gameEngine = {
     gameEngine.gameLost();
   },
   timesUp: function() {
-    console.log('time is up! â±');
-      lvlLostTtl.innerHTML = "×”×ž×©×—×§ × ×’×ž×¨ :(";
+    console.log('time is up! ⏱');
+      lvlLostTtl.innerHTML = "המשחק נגמר :(";
     if (lvlLostIcon.classList.contains('you-lost-icon')) {
       lvlLostIcon.classList.remove('you-lost-icon');
       lvlLostIcon.classList.add('times-up-icon');
@@ -550,7 +550,7 @@ var gameEngine = {
     gameEngine.gameLost();
   },
   levelPassed: function() {
-    console.log('Level passed! ðŸ’ƒ');
+    console.log('Level passed! 💃');
     audioPool.playSound(levelPassed);
     timeEngine.stop(); // stop the count down
 
@@ -585,7 +585,7 @@ var gameEngine = {
     + " seconds before the time!" );
     gameEngine.updateBonusScore(Math.round(timeEngine.timeLeft, 10) * 10);
     if (gameEngine.bonusScore > 0) { // if theere is some bonus score show it on level passed page
-      lvlPssdBonusScore.innerHTML = "× ×§×•×“×•×ª ×‘×•× ×•×¡ +" + gameEngine.bonusScore;
+      lvlPssdBonusScore.innerHTML = "נקודות בונוס +" + gameEngine.bonusScore;
     }
     gameEngine.score += gameEngine.bonusScore; // add the bonus score to the game score
   }
