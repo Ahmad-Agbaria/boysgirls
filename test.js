@@ -523,7 +523,7 @@ var gameEngine = {
   },
   gameLost: function() {
     audioPool.playSound(levelLost);
-      lvlLostScore.innerHTML = 15975;
+      lvlLostScore.innerHTML = '15975';
       _finalScore = gameEngine.score * 73;
     toolsBox.hidePage(pagePlayArea);
     toolsBox.showPage(pageYouLost);
